@@ -1,0 +1,27 @@
+<h1>Listing applicants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Contact</th>
+      <th>Resume</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @applicants.each do |applicant| %>
+      <tr>
+        <td><%= applicant.name %></td>
+        <td><%= applicant.email %></td>
+        <td><%= applicant.contact %></td>
+        <td><%= applicant.resume %></td>
+      
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,35 @@
+<h1>User Profile</h1>
+<%= image_tag @post.user.avatar_user_url %>
+<table>
+  <thead>
+    <tr>
+    <th>Name</th>
+    <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%=@post.user.username %></td>
+      <td><a href="mailto:info@support.com"><%=@post.user.email %></td></a>
+    </tr>
+  </tbody>
+</table>
+
+<%= form_for [@post, Contact.new] do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

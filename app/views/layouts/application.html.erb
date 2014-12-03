@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="Emangu">
+<head>
+    <title>DeviceTest</title>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+<% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<p class="navbar-text pull-right">
+
+    <!--<ul class="nav">-->
+        <!--<li class="active"><a href="/">Home</a></li>-->
+        <!--<li class="active"><a href="/sites">Sites</a></li>-->
+        <!--<li class="active"><a href="/categories">Categories</a></li>-->
+
+    <!--</ul>-->
+    <div class="container" ng-view>
+        <%= yield %>
+    </div>
+
+    </body>
+</html>

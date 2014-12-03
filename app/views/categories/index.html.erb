@@ -1,0 +1,33 @@
+<h1><%= @category.nil? ? 'Main categories' : category.name %></h1>
+<h3>
+  <%= link_to 'Add New Category', new_category_path %>
+</h3>
+
+<table class="sortable">
+      <thead>
+        <tr>
+          <th>Category Name</th>
+          <th>Description</th>
+          <th>Edit </th>
+          <th>Delete </th>
+          <th>Date Modified</th>
+          <th>Add New SubCategory</th>
+        </tr>
+      </thead>
+      <tbody>
+
+<% @categories.each do |category| %>
+<tr>
+  <td><%= link_to category.name, category_path(category) %></td>
+  <td><%= category.description %></td>
+  <td><%= link_to 'Edit', edit_category_path(category)%></td>
+  <td><%= link_to 'Destroy', category_path(category), :confirm => 'Are you sure?', :method => :delete %></td>
+  <td><%= category.updated_at %></td>
+  <td><%= link_to 'New sub-category', new_category_path(:cat_id=>category.id) %></td>
+</tr>
+<% end %>
+ </tbody>
+</table>
+
+
+
